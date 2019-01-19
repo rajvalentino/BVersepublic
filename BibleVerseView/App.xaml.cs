@@ -17,6 +17,7 @@ namespace BibleVerseView
         {
             base.OnStartup(e);
 
+
             var bootstrapper = new Bootstrapper();
             bootstrapper.Run();
         }
