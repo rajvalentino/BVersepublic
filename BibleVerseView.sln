@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibleVerseView", "BibleVerseView\BibleVerseView.csproj", "{CF415D98-4292-4198-BBD1-9A329BF64B05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VviewUserControls", "VviewUserControls\VviewUserControls.csproj", "{A6AD0866-7835-491C-8268-8E42A85A5A9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF415D98-4292-4198-BBD1-9A329BF64B05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF415D98-4292-4198-BBD1-9A329BF64B05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF415D98-4292-4198-BBD1-9A329BF64B05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF415D98-4292-4198-BBD1-9A329BF64B05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6AD0866-7835-491C-8268-8E42A85A5A9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6AD0866-7835-491C-8268-8E42A85A5A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6AD0866-7835-491C-8268-8E42A85A5A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6AD0866-7835-491C-8268-8E42A85A5A9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4D8652B5-4486-405B-83C1-C4892395F379}
+	EndGlobalSection
+EndGlobal

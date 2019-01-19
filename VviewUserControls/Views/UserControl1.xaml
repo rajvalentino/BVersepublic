@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="VviewUserControls.Views.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VviewUserControls.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="246" d:DesignWidth="363">
+    <Grid>
+        <Border Name="border" Margin="5,36,0,0" BorderBrush="Black" BorderThickness="2">
+            <Viewbox Stretch="Uniform" StretchDirection="DownOnly" Margin="0,0,0,-2" HorizontalAlignment="Left">
+                <Grid Width="{Binding Path=ActualWidth, ElementName=border}"  Height="{Binding Path=ActualHeight, ElementName=border}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="11*"/>
+                        <RowDefinition Height="30*"/>
+                        <RowDefinition Height="159*"/>
+                    </Grid.RowDefinitions>
+                    <Image x:Name="livebackgroundimage"  StretchDirection="Both" Width="{Binding Path=ActualWidth, ElementName=border}" Height="{Binding Path=ActualHeight, ElementName=border}"  Source="bg6b.jpg" Grid.RowSpan="3"  />
+                    <Label Name="chapterlabel" Width="{Binding Path=ActualWidth, ElementName=border}"   Content="{Binding ChapterName}" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14.667" Margin="0,8.116,0,8" Grid.Row="1"/>
+
+                    <TextBlock Name="verseContent" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Width="{Binding Path=ActualWidth, ElementName=border}" TextAlignment="Center"
+               TextTrimming="CharacterEllipsis" TextWrapping="WrapWithOverflow"  FontWeight="Bold" FontSize="30" Text="{Binding Verse}" Margin="0,4,0,0" Grid.Row="2" Height="48" VerticalAlignment="Top" >
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+            Nam laoreet dolor et dolor. Vestibulum quis nunc auctor ante dignissim venenatis. Curabitur wisi. 
+            Donec faucibus auctor ipsum. In fermentum dui.  Ut suscipit aliquam eros. Nullam elementum quam eu 
+            enim. Sed a purus id nisl imperdiet blandit. Cum sociis natoque penatibus et magnis dis parturient
+            montes, nascetur ridiculus mus. Sed at quam.
+                    </TextBlock>
+
+                </Grid>
+
+            </Viewbox>
+        </Border>
+    </Grid>
+</UserControl>

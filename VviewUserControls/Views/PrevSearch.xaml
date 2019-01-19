@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="VviewUserControls.Views.PrevSearch"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VviewUserControls.Views"
+             mc:Ignorable="d" 
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True" d:DesignHeight="280" d:DesignWidth="664.872"
+           >
+    <Grid>
+        <GroupBox Header="Verse View" Margin="0,0,0,0" Height="280" VerticalAlignment="Top">
+
+            <ScrollViewer Name="itemListScrollViewer" Margin="0,0,0,0" >
+                <ListView Name="vlist" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical" SelectedItem="{Binding SelectedVerse}" IsSynchronizedWithCurrentItem="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=.}" TextWrapping="Wrap"></TextBlock>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
+
+        </GroupBox>
+        <TextBlock Name="prev_chaptername" Visibility="Visible" Text="{Binding ChapName ,NotifyOnSourceUpdated=True,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="578,0,27,218"/>
+    </Grid>
+</UserControl>
