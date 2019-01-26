@@ -18,7 +18,7 @@
                         <RowDefinition Height="39*"/>
                         <RowDefinition Height="161*"/>
                     </Grid.RowDefinitions>
-                    <Image x:Name="livebackgroundimage" Height="{Binding Path=ActualHeight, ElementName=border}" Width="{Binding Path=ActualWidth, ElementName=border}"   Source="{Binding BgImagePath, Mode=TwoWay}" Grid.RowSpan="2"  />
+                    <Image x:Name="livebackgroundimage" Height="{Binding Path=ActualHeight, ElementName=border}" Width="{Binding Path=ActualWidth, ElementName=border}" Stretch="Fill" StretchDirection="Both"  Source="{Binding BgImagePath, Mode=TwoWay}" Grid.RowSpan="2"  />
                     <!--<Label Name="chapterlabel" FontWeight="Bold" FontSize="13" Grid.Row="1" Content="Genesis" Margin="0,0,0,1"/>-->
                     <TextBlock Name="chapterlabel" TextAlignment="Center"
                    TextWrapping="Wrap" TextTrimming="None" VerticalAlignment="Center" FontWeight="Bold" FontSize="55" Text="{Binding Chapternameno}" Margin="0,1,0,0" Height="70"/>

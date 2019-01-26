@@ -73,9 +73,12 @@ namespace VviewUserControls.ViewModels
                         Window wnd1 = Application.Current.Windows.OfType<Window>().Where(w => w.Name.Equals("shellwindow")).FirstOrDefault();
                         ls.verseContent.Text = _selectedVerse;
                         ls.chapterlabel.Text = _chapName;
-                        Brush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(Properties.Settings.Default.FontColor));
-                        ls.chapterlabel.Foreground = brush;
-                        ls.verseContent.Foreground = brush;
+                        if (Properties.Settings.Default.FontColor != "" && Properties.Settings.Default.FontColor != "0")
+                        {
+                            Brush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(Properties.Settings.Default.FontColor));
+                            ls.chapterlabel.Foreground = brush;
+                            ls.verseContent.Foreground = brush;
+                        }
                         ls.livebackgroundimage.Source = new BitmapImage(new Uri(Properties.Settings.Default.BackgroundImage, UriKind.Relative));
                         ls.verseContent.FontSize = Properties.Settings.Default.VerseFontSize;
                         //image = new BitmapImage(new Uri(Properties.Settings.Default.BackgroundImage, UriKind.Relative));

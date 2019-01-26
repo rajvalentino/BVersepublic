@@ -110,7 +110,7 @@ namespace VviewUserControls.ViewModels
             {
                 BgImagePath = @"bg6b.jpg";
             }
-            if (Properties.Settings.Default.FontColor != "")
+            if (Properties.Settings.Default.FontColor != "" && Properties.Settings.Default.FontColor != "0")
             {
                 Brush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(Properties.Settings.Default.FontColor));
                 FontColor = brush;

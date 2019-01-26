@@ -92,9 +92,12 @@ namespace VviewUserControls.ViewModels
                 //}
 
                 // ls.UpdateLayout();
-                Brush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(Properties.Settings.Default.FontColor));
-                ls.chapterlabel.Foreground = brush;
-                ls.verseContent.Foreground = brush;
+                if (Properties.Settings.Default.FontColor != "" && Properties.Settings.Default.FontColor != "0")
+                {
+                    Brush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(Properties.Settings.Default.FontColor));
+                    ls.chapterlabel.Foreground = brush;
+                    ls.verseContent.Foreground = brush;
+                }
                 if (Verselist.Count > 0)
                 {
                     ls.verseContent.Text = Properties.Settings.Default.CurVerse;
@@ -214,9 +217,12 @@ namespace VviewUserControls.ViewModels
                         ls.verseContent.Text = Verselist[index].ToString();
                         ls.chapterlabel.Text = _bookselected + " " + _chapterselected;
                         ls.verseContent.FontSize = Convert.ToDouble(SliderValueBinding);
-                        Brush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(Properties.Settings.Default.FontColor));
-                        ls.verseContent.Foreground = brush;
-                        ls.chapterlabel.Foreground = brush;
+                        if (Properties.Settings.Default.FontColor != "" && Properties.Settings.Default.FontColor != "0")
+                        {
+                            Brush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(Properties.Settings.Default.FontColor));
+                            ls.verseContent.Foreground = brush;
+                            ls.chapterlabel.Foreground = brush;
+                        }
                         ls.livebackgroundimage.Source = new BitmapImage(new Uri(Properties.Settings.Default.BackgroundImage, UriKind.Relative));
                         Properties.Settings.Default.VerseFontSize = Convert.ToDouble(SliderValueBinding);
                         Properties.Settings.Default.CurVerse = Verselist[index].ToString();
@@ -246,10 +252,13 @@ namespace VviewUserControls.ViewModels
                 Properties.Settings.Default.FontColor = _fontColor.Value.ToString();
                 Properties.Settings.Default.Save();
                 ls.verseContent.FontSize = Convert.ToDouble(SliderValueBinding);
-                Brush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(Properties.Settings.Default.FontColor));
-                ls.Foreground = brush;
-                ls.verseContent.Foreground = brush;
-                ls.chapterlabel.Foreground = brush;
+                if (Properties.Settings.Default.FontColor != "" && Properties.Settings.Default.FontColor != "0")
+                {
+                    Brush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(Properties.Settings.Default.FontColor));
+                    ls.Foreground = brush;
+                    ls.verseContent.Foreground = brush;
+                    ls.chapterlabel.Foreground = brush;
+                }
                 ls.livebackgroundimage.Source = new BitmapImage(new Uri(Properties.Settings.Default.BackgroundImage, UriKind.Relative));
                 if (Verselist.Count > 0)
                 {
@@ -296,9 +305,9 @@ namespace VviewUserControls.ViewModels
         #endregion
 
         #region Methods
-        public  MainSearchViewModel(RegionManager regionManager, IFetchFromXml ifetch_)
+        public MainSearchViewModel(RegionManager regionManager, IFetchFromXml ifetch_)
         {
-            _regionManager = regionManager;            
+            _regionManager = regionManager;
             ifetch = ifetch_;
             OtherLangBooks = ifetch.FetchOtherLangBooknames(current_language);
             Books = ifetch.FetchBooknames(current_language);
@@ -312,10 +321,14 @@ namespace VviewUserControls.ViewModels
             livewindow.Name = "LiveWindow";
             livewindow.Title = "Live";
             livewindow.Content = ls;
-            ls.verseContent.FontSize = Convert.ToDouble(SliderValueBinding);            
-            Brush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(Properties.Settings.Default.FontColor));
+            ls.verseContent.FontSize = Convert.ToDouble(SliderValueBinding);
+            if (Properties.Settings.Default.FontColor != "" && Properties.Settings.Default.FontColor != "0")
+            {
+            Brush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(Properties.Settings.Default.FontColor));            
             ls.chapterlabel.Foreground = brush;
             ls.verseContent.Foreground = brush;
+                FontColor = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.FontColor); ;
+            }
             ls.livebackgroundimage.Source = new BitmapImage(new Uri(Properties.Settings.Default.BackgroundImage, UriKind.Relative)); 
             LangSelection = new DelegateCommand<object>(languagechanged);
             WindowExt.MaximizeToSecondaryMonitor(livewindow);
@@ -324,7 +337,7 @@ namespace VviewUserControls.ViewModels
             livewindow.WindowStyle = WindowStyle.None;
             livewindow.Hide();
 
-            FontColor =  (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.FontColor);
+            //FontColor =  (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.FontColor);
             ClearTempVerse();
         }
         private void ClearTempVerse()
@@ -367,9 +380,12 @@ namespace VviewUserControls.ViewModels
                 Window wnd = Application.Current.Windows.OfType<Window>().Where(w => w.Name.Equals("LiveWindow")).FirstOrDefault();
 
                 ls.verseContent.FontSize = Convert.ToDouble(SliderValueBinding);
-                Brush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(Properties.Settings.Default.FontColor));
-                ls.chapterlabel.Foreground = brush;
-                ls.verseContent.Foreground = brush;
+                if (Properties.Settings.Default.FontColor != "" && Properties.Settings.Default.FontColor != "0")
+                {
+                    Brush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(Properties.Settings.Default.FontColor));
+                    ls.chapterlabel.Foreground = brush;
+                    ls.verseContent.Foreground = brush;
+                }
                 ls.livebackgroundimage.Source = new BitmapImage(new Uri(Properties.Settings.Default.BackgroundImage, UriKind.Relative));
 
                 if (Verselist.Count > 0)
@@ -487,9 +503,12 @@ namespace VviewUserControls.ViewModels
                     ls.verseContent.Text = Verselist[index].ToString();
                     ls.chapterlabel.Text = _bookselected + " " + _chapterselected;
                     ls.verseContent.FontSize = Convert.ToDouble(SliderValueBinding);
+                if (Properties.Settings.Default.FontColor != "" && Properties.Settings.Default.FontColor != "0")
+                {
                     Brush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(Properties.Settings.Default.FontColor));
                     ls.verseContent.Foreground = brush;
                     ls.chapterlabel.Foreground = brush;
+                }
                     ls.livebackgroundimage.Source = new BitmapImage(new Uri(Properties.Settings.Default.BackgroundImage, UriKind.Relative));
                     Properties.Settings.Default.VerseFontSize = Convert.ToDouble(SliderValueBinding);
                     Properties.Settings.Default.CurVerse = Verselist[index].ToString();
